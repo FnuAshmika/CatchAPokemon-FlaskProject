@@ -1,0 +1,13 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div class="add-container">
+    <h2>{{ user.username.title() }}'s Profile</h2>
+    {% for pokemon in pokemons %}
+        {% if pokemon.poke != none %}
+            <p>{{ pokemon.owner.username }} caught: {{ pokemon.poke }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
+

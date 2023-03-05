@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" class="navbar bg-dark" data-bs-theme="dark" style="background-color: rgba(0, 0, 0, 0.5) !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">Ashmika's Games</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="{{ url_for('main.index') }}">Home</a>
+        {% if current_user.is_active %}
+        {# <a class="nav-link" href="{{ url_for('social.blog') }}">Blog</a> #}
+        <a class="nav-link" href="{{ url_for('social.user', username=current_user.username )}}">Your Poke Collection!</a>
+        <a class="nav-link" href="{{ url_for('social.search_pokemon') }}">Collect</a>
+        <a class="nav-link" href="{{ url_for('auth.sign_out') }}">SignOut</a>
+        {% else %}
+        <a class="nav-link" href="{{ url_for('auth.sign_in') }}">LogIn</a>
+        <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+</nav>

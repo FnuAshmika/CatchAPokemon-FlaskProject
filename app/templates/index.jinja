@@ -1,0 +1,20 @@
+{% extends "base.jinja" %}
+{% block content %}
+  <h2>Start catching your Pokemons.</h2>
+  <div class="pokemon-grid">
+    {% for pokemon in pokemon_info %}
+      <div class="pokemon">
+        <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
+        <p>{{ pokemon.name }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="start-button-container">
+    {% if current_user.is_authenticated %}
+        <a href="{{ url_for('social.search_pokemon') }}" class="btn btn-success btn-flash">Start Your Journey</a>
+    {% else %}
+        <a href="{{ url_for('auth.sign_in') }}" class="btn btn-success btn-flash">Start Your Journey</a>
+    {% endif %}  
+  </div>
+
+{% endblock %}

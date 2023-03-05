@@ -1,0 +1,15 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div class="add-container">
+  <h2>Add Pokemon</h2>
+  <p>Name: {{ pokemon_name }}</p>
+  <img src="{{ img_url }}" alt="{{ pokemon_name }} Image">
+  <form method="POST" action="{{ url_for('social.add_pokemon') }}">
+    <input type="hidden" name="pokemon_name" value="{{ pokemon_name }}">
+    {{ form.hidden_tag() }}
+    {{ form.submit(class_="btn btn-success", value="Add") }}
+  </form>
+</div>  
+{% endblock %}
+

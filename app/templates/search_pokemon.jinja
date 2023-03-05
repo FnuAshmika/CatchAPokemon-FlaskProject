@@ -1,0 +1,34 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+  <h2 class="centered">Search for a Pokemon</h2>
+  <div class="form-group">
+    
+    <form method="POST" action="{{ url_for('social.search_pokemon') }}">
+        {{ form.hidden_tag() }}
+        {{ form.pokemon_name.label }} {{ form.pokemon_name}}
+        {% if form.pokemon_name.errors %}
+            <span style="color: red;">{{ form.pokemon_name.errors[0] }}</span>
+        {% endif %}
+        
+        {{ form.submit(class_="btn btn-success") }}
+    </form>
+  </div>
+   <h3>Or Catch one from these:-</h3>
+   <div class="row">
+        {% for pokemon in pokemon_list %}
+            <div class="card1">
+                <img src="{{ pokemon.img_url }}" class="card-img-top" alt="{{ pokemon.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pokemon.name.title() }}</h5>
+                    <form method="POST" action="{{ url_for('social.add_pokemon') }}">
+                        {{ form.hidden_tag() }}
+                        <input type="hidden" name="pokemon_name" value="{{ pokemon.name }}">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
