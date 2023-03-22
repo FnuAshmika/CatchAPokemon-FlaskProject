@@ -1,4 +1,6 @@
 # CatchAPokemon-FlaskProject
+`![Home Page](IMG-8952 (1).jpg)`
+
 Link to my hosted page: https://glitch.com/~roasted-exuberant-decimal
 
 This is a full-stack web application that displays Pokemon on the homepage, has a user page that displays the user's Pokemon, 
