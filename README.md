@@ -1,5 +1,5 @@
 # CatchAPokemon-FlaskProject
-`![Home Page](IMG-8952 (1).jpg)`
+![Home Page](https://github.com/FnuAshmika/CatchAPokemon-FlaskProject/blob/main/IMG-8952%20(1).jpg?width=200)
 
 Link to my hosted page: https://glitch.com/~roasted-exuberant-decimal
 
